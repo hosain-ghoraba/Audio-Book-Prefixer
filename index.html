@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>مضيف المقدمات الصوتية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            text-align: center;
+            direction: rtl;
+            font-family: 'Cairo', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        button,
+        .download-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0 32px;
+            /* Adjust padding to make space for the larger image */
+            text-align: center;
+            text-decoration: none;
+            display: inline-flex;
+            /* Use flexbox for better alignment */
+            align-items: center;
+            /* Center items vertically */
+            justify-content: center;
+            /* Center items horizontally */
+            /* font-size: 20px; */
+            /* Increase the font size */
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 50px;
+            /* Make the button circle */
+            transition: background-color 0.3s ease;
+            /* width: 200px; */
+            /* height: 70px; */
+            background-image: url('download_image.png');
+            background-repeat: no-repeat;
+            background-position: center left 10px;
+            background-size: 40px 40px;
+            /* background image size */
+            padding-left: 70px;
+        }
+
+        button:hover,
+        .download-button:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ol {
+            padding-right: 20px;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .list-item {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .slider {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .audio-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .audio-container span {
+            margin-left: 10px;
+            font-size: 16px;
+            color: #333;
+            padding: 5px 10px;
+            background-color: #f4f4f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>مرحبا بك في مضيف المقدمات الصوتية للتسجيلات</h1>
+        <hr>
+
+        <h2>دواعي الاستخدام</h2>
+        <p>هذا البرنامج مصمم ليستخدمه الذين يقومون بتسجيل الكتب صوتيا. يقوم هذا البرنامج بإضافة مقدمة صوتية لكل تسجيلات
+            الكتاب، تحتوي هذه المقدمة على اسم الكتاب، ورقم التسجيل، وصفحة البداية والنهاية، وطول التسجيل... مصممة لكي
+            يعرف
+            المستمع كل المعلومات اللازمة عن التسجيل قبل سماعه. هذه المقدمة أيضا تسهل البحث في التسجيلات على المستمع.</p>
+        <!-- ------------------------------------------------------------ -->
+        <div class="audio-container">
+            <span>مثال للمقدمة</span>
+            <audio id="audio" controls>
+                <source src="sample.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <!-- ------------------------------------------------------------ -->
+        <hr>
+        <h2>كيفية الاستخدام</h2>
+        <ol>
+            <li>قم بتحميل البرنامج (110 ميغابايت)
+                <a href="program.zip" class="download-button" download>من هنا</a>
+            </li>
+            </li>
+
+            <li class="list-item">ضع كل تسجيلات الكتاب في مجلد فارغ، وقم بتسمية المجلد باسم الكتاب.</li>
+            <li class="list-item">قم بتسمية كل تسجيل باسم صفحة البداية والنهاية التي يتناولها التسجيل، بحيث يكون على
+                الهيئة
+                التالية: صفحة النهاية-صفحة البداية، مثال: 45-23.</li>
+            <li class="list-item">افتح البرنامج واضغط على زر "اضغط هنا للتصفح" لاختيار المجلد الذي يحتوي على التسجيلات.
+            </li>
+        </ol>
+        <p>بعدها سوف يقوم البرنامج بإضافة مقدمة صوتية لكل تسجيل في المجلد الذي اخترته، وسوف يقوم بوضع كل التسجيلات
+            الجديدة
+            الناتجة في مجلد اسمه "نتيجة البرنامج"، وسيكون هذا المجلد الجديد داخل المجلد الأصلي الذي يحتوي على التسجيلات.
+        </p>
+        <hr>
+
+
+        <!-- ------------------------------------------------------------ -->
+        <h2>للتواصل مع المطور</h2>
+        <p><a href="mailto:hussain.ghoraba@gmail.com">hussain.ghoraba@gmail.com</a></p>
+        <!-- ------------------------------------------------------------ -->
+
+    </div>
+
+    <script>
+        function playSound() {
+            const audio = document.getElementById('audio');
+            if (audio) {
+                audio.play();
+            } else {
+                console.log("Audio not loaded yet.");
+            }
+        }
+    </script>
+</body>
+
+</html>
