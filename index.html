@@ -17,10 +17,33 @@
 
         gtag('config', 'G-8654SC3L9K');
     </script>
-    <!-- - -->
+
+    <!-- Get download size -->
+    <script>
+        async function fetchFileSize() {
+            const apiUrl = 'https://api.github.com/repos/hosain-ghoraba/Audio-Book-Prefixer/releases/latest';
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                if (data.assets && data.assets.length > 0) {
+                    const totalSizeInBytes = data.assets.reduce((total, asset) => total + asset.size, 0);
+                    const totalSizeInMB = Math.round(totalSizeInBytes / (1024 * 1024));
+                    document.getElementById('file-size').textContent = `(${totalSizeInMB} ميغابايت)`;
+                }
+            } catch (error) {
+                console.error('Error fetching file size:', error);
+            }
+        }
+
+        fetchFileSize();
+    </script>
 
 
     <style>
+        :root {
+            --global-font-size: 20px;
+        }
+
         body {
             text-align: center;
             direction: rtl;
@@ -51,7 +74,6 @@
             border-radius: 50px;
             /* Make the button circle */
             transition: background-color 0.3s ease;
-            /* width: 200px; */
             /* height: 70px; */
             background-image: url('./data/download_image.png');
             background-repeat: no-repeat;
@@ -90,6 +112,7 @@
         p {
             line-height: 1.6;
             margin-bottom: 20px;
+            font-size: var(--global-font-size);
         }
 
         ol {
@@ -98,8 +121,9 @@
             direction: rtl;
         }
 
-        .list-item {
+        li {
             margin-bottom: 10px;
+            font-size: var(--global-font-size);
         }
 
         a {
@@ -109,11 +133,6 @@
 
         a:hover {
             text-decoration: underline;
-        }
-
-        .slider {
-            width: 100%;
-            margin: 20px 0;
         }
 
         .audio-container {
@@ -142,7 +161,8 @@
         <hr>
 
         <h2>دواعي الاستخدام</h2>
-        <p>هذا البرنامج مصمم ليستخدمه الذين يقومون بتسجيل الكتب صوتيا. يقوم هذا البرنامج بإضافة مقدمة صوتية لكل تسجيلات
+        <p>هذا البرنامج مصمم ليستخدمه الذين يقومون بتسجيل الكتب صوتيا. يقوم هذا البرنامج
+            بإضافة مقدمة صوتية لكل تسجيلات
             الكتاب، تحتوي هذه المقدمة على اسم الكتاب، ورقم التسجيل، وصفحة البداية والنهاية، وطول التسجيل... مصممة لكي
             يعرف
             المستمع كل المعلومات اللازمة عن التسجيل قبل سماعه. هذه المقدمة أيضا تسهل البحث في التسجيلات على المستمع.</p>
@@ -158,17 +178,17 @@
         <hr>
         <h2>كيفية الاستخدام</h2>
         <ol>
-            <li>قم بتحميل البرنامج (103 ميغابايت)
+            <li>قم بتحميل البرنامج <span id="file-size"></span>
                 <a href="https://github.com/hosain-ghoraba/Audio-Book-Prefixer/releases/download/v1/Audiobook-Modifier.exe"
                     class="download-button" download>من هنا</a>
             </li>
             </li>
 
-            <li class="list-item">ضع كل تسجيلات الكتاب في مجلد فارغ، وقم بتسمية المجلد باسم الكتاب.</li>
-            <li class="list-item">قم بتسمية كل تسجيل باسم صفحة البداية والنهاية التي يتناولها التسجيل، بحيث يكون على
+            <li>ضع كل تسجيلات الكتاب في مجلد فارغ، وقم بتسمية المجلد باسم الكتاب.</li>
+            <li>قم بتسمية كل تسجيل باسم صفحة البداية والنهاية التي يتناولها التسجيل، بحيث يكون على
                 الهيئة
                 التالية: صفحة النهاية-صفحة البداية، مثال: 45-23.</li>
-            <li class="list-item">افتح البرنامج واضغط على زر "اضغط هنا للتصفح" لاختيار المجلد الذي يحتوي على التسجيلات.
+            <li>افتح البرنامج واضغط على زر "اضغط هنا للتصفح" لاختيار المجلد الذي يحتوي على التسجيلات.
             </li>
         </ol>
         <p>بعدها سوف يقوم البرنامج بإضافة مقدمة صوتية لكل تسجيل في المجلد الذي اخترته، وسوف يقوم بوضع كل التسجيلات
@@ -184,17 +204,6 @@
         <!-- ------------------------------------------------------------ -->
 
     </div>
-
-    <script>
-        function playSound() {
-            const audio = document.getElementById('audio');
-            if (audio) {
-                audio.play();
-            } else {
-                console.log("Audio not loaded yet.");
-            }
-        }
-    </script>
 </body>
 
 </html>
