@@ -19,27 +19,6 @@
         gtag('config', 'G-8654SC3L9K');
     </script>
 
-    <!-- Get download size -->
-    <script>
-        async function fetchFileSize() {
-            const apiUrl = 'https://api.github.com/repos/hosain-ghoraba/Audio-Book-Prefixer/releases/latest';
-            try {
-                const response = await fetch(apiUrl);
-                const data = await response.json();
-                if (data.assets && data.assets.length > 0) {
-                    const totalSizeInBytes = data.assets.reduce((total, asset) => total + asset.size, 0);
-                    const totalSizeInMB = Math.round(totalSizeInBytes / (1024 * 1024));
-                    document.getElementById('file-size').textContent = `(${totalSizeInMB} ميغابايت)`;
-                }
-            } catch (error) {
-                console.error('Error fetching file size:', error);
-            }
-        }
-
-        fetchFileSize();
-    </script>
-
-
     <style>
         :root {
             --global-font-size: larger;
@@ -227,7 +206,7 @@
             <h2>كيفية الاستخدام </h2>
             <span> (على الكمبيوتر فقط)</span>
             <ol>
-                <li> قم بتحميل البرنامج <span id="file-size"></span>
+                <li> قم بتحميل البرنامج <span id="file-size">(102 ميغابايت)</span>
                     <a href="https://drive.google.com/file/d/10g2gtmujtrwgWocEWcrZAWrquL-mfJE3/view?usp=sharing"
                         class="download-button" download>من هنا</a>
                 </li>
