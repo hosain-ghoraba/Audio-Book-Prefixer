@@ -42,6 +42,7 @@
     <style>
         :root {
             --global-font-size: larger;
+            --mobile-width: 900px;
         }
 
         body {
@@ -97,7 +98,7 @@
             border-radius: 8px;
         }
 
-        @media (max-width: 1000px) {
+        @media (max-width: var(--mobile-width)) {
             .container {
                 width: 100%;
             }
@@ -145,6 +146,16 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
+        }
+
+        .audio-container audio {
+            width: 50%;
+        }
+
+        @media (max-width: var(--mobile-width)) {
+            .audio-container audio {
+                width: 90%;
+            }
         }
 
         .audio-container span {
