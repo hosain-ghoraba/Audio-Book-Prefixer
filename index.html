@@ -45,6 +45,7 @@
             --global-font-size: larger;
         }
 
+        /* for mobile */
         @media (max-width: 768px) {
             :root {
                 --global-font-size: medium;
@@ -61,6 +62,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+                margin: 10px;
+            }
         }
 
         .download-button {
@@ -93,35 +111,16 @@
 
         @media (max-width: 768px) {
             .download-button {
-                padding: 0 16px;
+                padding: 0 10px;
                 background-size: 25px 25px;
-                background-position: center left 5px;
-                padding-left: 45px;
+                background-position: center left 0px;
+                padding-left: 30px;
             }
         }
 
         .download-button:hover {
             background-color: #45a049;
         }
-
-        .container {
-            width: 50%;
-            margin: 50px auto;
-            background: #fff;
-            padding: 50px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                width: 100%;
-                padding: 10px;
-                margin: 10px;
-            }
-
-        }
-
 
         h1 {
             color: #4CAF50;
@@ -184,8 +183,6 @@
             }
 
         }
-
-
 
         .audio-container span {
             margin-left: 10px;
