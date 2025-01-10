@@ -45,14 +45,22 @@
             --global-font-size: larger;
         }
 
+        @media (max-width: 768px) {
+            :root {
+                --global-font-size: small;
+            }
+        }
+
         body {
             text-align: center;
             direction: rtl;
             font-family: 'Cairo', sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            margin: 0;
-            padding: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .download-button {
@@ -100,7 +108,9 @@
             .container {
                 width: 100%;
                 padding: 10px;
+                margin: 10px;
             }
+
         }
 
 
@@ -146,6 +156,19 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .audio-container {
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .audio-container audio {
+                width: 100%;
+            }
+
         }
 
         .audio-container audio {
